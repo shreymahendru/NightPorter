@@ -6,13 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Todo View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="The_Night_Porter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TodoViewController" customModule="The_Night_Porter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -24,17 +25,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AU1-D3-eG0">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5dr-dP-qrt">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="603" id="Xiy-3b-TVP"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="XnM-04-isF"/>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="GXT-wQ-7w3"/>
-                                        </connections>
-                                    </tableView>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XN5-bE-IIF">
                                         <rect key="frame" x="0.0" y="603" width="375" height="44"/>
                                         <items>
@@ -57,16 +47,27 @@
                                             </barButtonItem>
                                         </items>
                                     </toolbar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5dr-dP-qrt">
+                                        <rect key="frame" x="0.0" y="8" width="375" height="603"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="603" id="Xyi-R2-Jb9"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="XnM-04-isF"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="GXT-wQ-7w3"/>
+                                        </connections>
+                                    </tableView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="5dr-dP-qrt" firstAttribute="trailing" secondItem="XN5-bE-IIF" secondAttribute="trailing" id="DYz-Rm-hG1"/>
-                                    <constraint firstItem="5dr-dP-qrt" firstAttribute="leading" secondItem="XN5-bE-IIF" secondAttribute="leading" id="Rn0-n5-NiK"/>
-                                    <constraint firstAttribute="trailing" secondItem="5dr-dP-qrt" secondAttribute="trailing" id="cfN-nR-vvB"/>
-                                    <constraint firstItem="5dr-dP-qrt" firstAttribute="bottom" secondItem="XN5-bE-IIF" secondAttribute="top" id="ddW-3e-nE5"/>
-                                    <constraint firstItem="5dr-dP-qrt" firstAttribute="top" secondItem="AU1-D3-eG0" secondAttribute="top" id="k3m-Zh-AFP"/>
-                                    <constraint firstItem="5dr-dP-qrt" firstAttribute="leading" secondItem="AU1-D3-eG0" secondAttribute="leading" id="sJ3-tD-vQi"/>
-                                    <constraint firstItem="5dr-dP-qrt" firstAttribute="centerX" secondItem="AU1-D3-eG0" secondAttribute="centerX" id="skf-q9-TDp"/>
-                                    <constraint firstAttribute="bottom" secondItem="5dr-dP-qrt" secondAttribute="bottom" constant="44" id="ui8-SX-Uhz"/>
+                                    <constraint firstItem="5dr-dP-qrt" firstAttribute="trailing" secondItem="XN5-bE-IIF" secondAttribute="trailing" id="784-3S-cYX"/>
+                                    <constraint firstAttribute="bottom" secondItem="5dr-dP-qrt" secondAttribute="bottom" constant="36" id="BLA-5n-6Kg"/>
+                                    <constraint firstItem="5dr-dP-qrt" firstAttribute="top" secondItem="AU1-D3-eG0" secondAttribute="topMargin" id="Vn1-pG-Sov"/>
+                                    <constraint firstItem="5dr-dP-qrt" firstAttribute="leading" secondItem="AU1-D3-eG0" secondAttribute="leading" id="Z8r-Pb-wmO"/>
+                                    <constraint firstItem="5dr-dP-qrt" firstAttribute="leading" secondItem="XN5-bE-IIF" secondAttribute="leading" id="crG-8v-obb"/>
+                                    <constraint firstAttribute="trailing" secondItem="5dr-dP-qrt" secondAttribute="trailing" id="dzo-wY-h2o"/>
+                                    <constraint firstItem="5dr-dP-qrt" firstAttribute="centerX" secondItem="AU1-D3-eG0" secondAttribute="centerX" id="mW0-F2-ehB"/>
+                                    <constraint firstAttribute="bottom" secondItem="XN5-bE-IIF" secondAttribute="bottom" id="mb5-TP-lw3"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
