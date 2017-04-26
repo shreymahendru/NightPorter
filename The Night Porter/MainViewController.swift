@@ -12,7 +12,18 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Home"
+        
+//        UserDefaults.standard.set("Shrey", forKey: "name")
+        let name = UserDefaults.standard.value(forKey: "name")
+        if (name != nil) {
+            print(name!)
+        }else{
+            print ("naaa ")
+        }
+        
+        
+        
         // Do any additional setup after loading the view.
     }
 

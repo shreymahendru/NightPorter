@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Jc8-nf-E4n">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,12 +21,116 @@
                     <view key="view" contentMode="scaleToFill" id="IlB-e2-rc0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cko-fH-hUJ">
+                                <rect key="frame" x="96" y="278.5" width="183" height="110"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Night Porter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ce3-sU-Zea">
+                                        <rect key="frame" x="1.5" y="0.0" width="180.5" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vIz-HI-2tF">
+                                        <rect key="frame" x="55" y="47.5" width="73" height="62.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3o-IR-t2V">
+                                                <rect key="frame" x="5" y="0.0" width="63" height="30"/>
+                                                <state key="normal" title="Todo List"/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" id="OjU-tu-Dwv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOg-fQ-IE0">
+                                                <rect key="frame" x="0.0" y="32.5" width="73" height="30"/>
+                                                <state key="normal" title="Stopwatch"/>
+                                                <connections>
+                                                    <segue destination="9fW-Dg-FAR" kind="show" id="00t-9y-GpC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="Vbz-X5-F3a"/>
+                                    <constraint firstAttribute="width" constant="183" id="bR8-iM-7Td"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cko-fH-hUJ" firstAttribute="centerY" secondItem="IlB-e2-rc0" secondAttribute="centerY" id="9Fp-Gi-xqD"/>
+                            <constraint firstItem="cko-fH-hUJ" firstAttribute="leading" secondItem="IlB-e2-rc0" secondAttribute="leadingMargin" constant="80" id="EbF-Mb-BKN"/>
+                            <constraint firstItem="cko-fH-hUJ" firstAttribute="centerX" secondItem="IlB-e2-rc0" secondAttribute="centerX" id="I1G-sW-sJa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cko-fH-hUJ" secondAttribute="trailing" constant="80" id="awC-8L-6HQ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="YYM-8M-h1B"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9e-9a-uat" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-921" y="-141"/>
+            <point key="canvasLocation" x="16.800000000000001" y="-141.67916041979012"/>
+        </scene>
+        <!--Stop Watch View Controller-->
+        <scene sceneID="4Fa-ox-N5f">
+            <objects>
+                <viewController id="9fW-Dg-FAR" customClass="StopWatchViewController" customModule="The_Night_Porter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SHG-3X-AgO"/>
+                        <viewControllerLayoutGuide type="bottom" id="JBe-O3-ayT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NsX-nL-cOg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F12-XQ-C6B">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="UW0-Iy-GS7"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Stop" id="mwe-9g-tmx">
+                                        <connections>
+                                            <action selector="stop:" destination="9fW-Dg-FAR" id="cZ4-Xa-fnz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tYd-4h-4k9"/>
+                                    <barButtonItem title="Start" id="Zd6-hy-P3X">
+                                        <connections>
+                                            <action selector="play:" destination="9fW-Dg-FAR" id="OEQ-Gs-NWy"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="LqA-Ub-lEQ"/>
+                                    <barButtonItem title="Reset" id="75y-ht-29o">
+                                        <connections>
+                                            <action selector="reset:" destination="9fW-Dg-FAR" id="U8f-Jy-aNo"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEp-k5-ghX">
+                                <rect key="frame" x="97" y="293" width="180.5" height="80"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="67"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LEp-k5-ghX" firstAttribute="centerY" secondItem="NsX-nL-cOg" secondAttribute="centerY" id="Jti-ic-dEt"/>
+                            <constraint firstItem="JBe-O3-ayT" firstAttribute="top" secondItem="F12-XQ-C6B" secondAttribute="bottom" id="dIT-6n-UQZ"/>
+                            <constraint firstItem="LEp-k5-ghX" firstAttribute="centerX" secondItem="NsX-nL-cOg" secondAttribute="centerX" id="euJ-oD-h87"/>
+                            <constraint firstItem="F12-XQ-C6B" firstAttribute="leading" secondItem="NsX-nL-cOg" secondAttribute="leading" id="gRM-GJ-Xc3"/>
+                            <constraint firstAttribute="trailing" secondItem="F12-XQ-C6B" secondAttribute="trailing" id="kRz-Rj-6F3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="timeDisplay" destination="LEp-k5-ghX" id="8yt-gq-hhl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eG3-Jp-aEq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-82.400000000000006" y="627.4362818590705"/>
         </scene>
         <!--Todo View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -40,61 +144,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AU1-D3-eG0">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <subviews>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XN5-bE-IIF">
-                                        <rect key="frame" x="0.0" y="603" width="375" height="44"/>
-                                        <items>
-                                            <barButtonItem style="plain" id="cRp-v9-JE9">
-                                                <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Dko-Ya-00v">
-                                                    <rect key="frame" x="16" y="6.5" width="51" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="onTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <connections>
-                                                        <action selector="toggleDarkMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="afa-eu-TbS"/>
-                                                    </connections>
-                                                </switch>
-                                            </barButtonItem>
-                                            <barButtonItem title="Dark Mode" id="KUO-gO-XTx"/>
-                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="PMf-du-9SX"/>
-                                            <barButtonItem title="Reset" id="v2T-11-5eP">
-                                                <connections>
-                                                    <action selector="resetButton:" destination="BYZ-38-t0r" id="kjL-Ei-bj2"/>
-                                                </connections>
-                                            </barButtonItem>
-                                        </items>
-                                    </toolbar>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5dr-dP-qrt">
-                                        <rect key="frame" x="0.0" y="8" width="375" height="603"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="603" id="Xyi-R2-Jb9"/>
-                                        </constraints>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XN5-bE-IIF">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="cRp-v9-JE9">
+                                        <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Dko-Ya-00v">
+                                            <rect key="frame" x="16" y="6.5" width="51" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="onTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="toggleDarkMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="afa-eu-TbS"/>
+                                            </connections>
+                                        </switch>
+                                    </barButtonItem>
+                                    <barButtonItem title="Dark Mode" id="KUO-gO-XTx"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PMf-du-9SX"/>
+                                    <barButtonItem title="Reset" id="v2T-11-5eP">
                                         <connections>
-                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="XnM-04-isF"/>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="GXT-wQ-7w3"/>
+                                            <action selector="resetButton:" destination="BYZ-38-t0r" id="kjL-Ei-bj2"/>
                                         </connections>
-                                    </tableView>
-                                </subviews>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5dr-dP-qrt">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="5dr-dP-qrt" firstAttribute="trailing" secondItem="XN5-bE-IIF" secondAttribute="trailing" id="784-3S-cYX"/>
-                                    <constraint firstAttribute="bottom" secondItem="5dr-dP-qrt" secondAttribute="bottom" constant="36" id="BLA-5n-6Kg"/>
-                                    <constraint firstItem="5dr-dP-qrt" firstAttribute="top" secondItem="AU1-D3-eG0" secondAttribute="topMargin" id="Vn1-pG-Sov"/>
-                                    <constraint firstItem="5dr-dP-qrt" firstAttribute="leading" secondItem="AU1-D3-eG0" secondAttribute="leading" id="Z8r-Pb-wmO"/>
-                                    <constraint firstItem="5dr-dP-qrt" firstAttribute="leading" secondItem="XN5-bE-IIF" secondAttribute="leading" id="crG-8v-obb"/>
-                                    <constraint firstAttribute="trailing" secondItem="5dr-dP-qrt" secondAttribute="trailing" id="dzo-wY-h2o"/>
-                                    <constraint firstItem="5dr-dP-qrt" firstAttribute="centerX" secondItem="AU1-D3-eG0" secondAttribute="centerX" id="mW0-F2-ehB"/>
-                                    <constraint firstAttribute="bottom" secondItem="XN5-bE-IIF" secondAttribute="bottom" id="mb5-TP-lw3"/>
+                                    <constraint firstAttribute="height" constant="559" id="Vfz-m1-NzA"/>
                                 </constraints>
-                            </scrollView>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="XnM-04-isF"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="GXT-wQ-7w3"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="AU1-D3-eG0" secondAttribute="trailing" id="O6s-pf-1EX"/>
-                            <constraint firstItem="AU1-D3-eG0" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="PCm-J9-aTB"/>
-                            <constraint firstItem="AU1-D3-eG0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dZu-cf-YYp"/>
-                            <constraint firstItem="AU1-D3-eG0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="yYF-SN-5T5"/>
+                            <constraint firstItem="5dr-dP-qrt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="87B-uh-7OB"/>
+                            <constraint firstItem="XN5-bE-IIF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8Uu-Qq-ASc"/>
+                            <constraint firstItem="5dr-dP-qrt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="M4I-mL-NOa"/>
+                            <constraint firstAttribute="trailing" secondItem="5dr-dP-qrt" secondAttribute="trailing" id="Tjz-Xc-Gox"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XN5-bE-IIF" secondAttribute="bottom" id="VrR-1T-pG9"/>
+                            <constraint firstAttribute="trailing" secondItem="5dr-dP-qrt" secondAttribute="trailing" id="bzV-05-ltj"/>
+                            <constraint firstItem="5dr-dP-qrt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="nL6-60-XoH"/>
+                            <constraint firstAttribute="trailing" secondItem="XN5-bE-IIF" secondAttribute="trailing" id="oBd-kf-98U"/>
                         </constraints>
                     </view>
                     <connections>
@@ -103,7 +196,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-165.59999999999999" y="205.54722638680661"/>
+            <point key="canvasLocation" x="773.60000000000002" y="205.54722638680661"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Z5m-iA-lNG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jc8-nf-E4n" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DGu-8u-yhN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="paG-on-02c" kind="relationship" relationship="rootViewController" id="EBe-Rc-wez"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TRE-r4-nFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-922.39999999999998" y="-141.67916041979012"/>
         </scene>
     </scenes>
 </document>
