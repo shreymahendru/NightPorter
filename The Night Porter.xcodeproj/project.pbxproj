@@ -14,6 +14,7 @@
 		03302A991EA5DC3200C0AC28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03302A971EA5DC3200C0AC28 /* LaunchScreen.storyboard */; };
 		0354FB8B1EAFC9250009155F /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354FB8A1EAFC9250009155F /* StopWatchViewController.swift */; };
 		0354FB8D1EAFE71D0009155F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354FB8C1EAFE71D0009155F /* MainViewController.swift */; };
+		0354FB8F1EB02A180009155F /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354FB8E1EB02A180009155F /* NewTaskViewController.swift */; };
 		03B5213F1EAF299C002870A4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B5213E1EAF299C002870A4 /* Task.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		03302A9A1EA5DC3200C0AC28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0354FB8A1EAFC9250009155F /* StopWatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopWatchViewController.swift; sourceTree = "<group>"; };
 		0354FB8C1EAFE71D0009155F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0354FB8E1EB02A180009155F /* NewTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		03B5213E1EAF299C002870A4 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 				03B5213E1EAF299C002870A4 /* Task.swift */,
 				0354FB8A1EAFC9250009155F /* StopWatchViewController.swift */,
 				0354FB8C1EAFE71D0009155F /* MainViewController.swift */,
+				0354FB8E1EB02A180009155F /* NewTaskViewController.swift */,
 			);
 			path = "The Night Porter";
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				03302A911EA5DC3200C0AC28 /* TodoViewController.swift in Sources */,
 				03B5213F1EAF299C002870A4 /* Task.swift in Sources */,
 				03302A8F1EA5DC3200C0AC28 /* AppDelegate.swift in Sources */,
+				0354FB8F1EB02A180009155F /* NewTaskViewController.swift in Sources */,
 				0354FB8D1EAFE71D0009155F /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

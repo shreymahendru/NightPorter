@@ -8,34 +8,39 @@
 
 import UIKit
 
-class TodoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    //contents
-    var dailyTasks = [
-        Task(name: "Check all doors", type: .Daily, completed: false, lastCompleted: nil),
-        Task(name: "If it's freezing, check the water pipes outside", type: .Daily, completed: false, lastCompleted: nil),
-        Task(name: "heck the mail box at the end of the lane", type: .Daily, completed: false, lastCompleted: nil)
-    ]
-    
-    var weeklyTasks = [
-        Task(name: "Check inside all unoccupied cabins", type: .Weekly, completed: false, lastCompleted: nil),
-        Task(name: "Run all faucets for 30 seconds", type: .Weekly, completed: false, lastCompleted: nil),
-        Task(name: "Walk the perimeter of the property", type: .Weekly, completed: false, lastCompleted: nil),
-    ]
-    
-    
-    var biweeklyTask = [
+
+//contents
+var dailyTasks = [
+    Task(name: "Check all doors", type: .Daily, completed: false, lastCompleted: nil),
+    Task(name: "If it's freezing, check the water pipes outside", type: .Daily, completed: false, lastCompleted: nil),
+    Task(name: "heck the mail box at the end of the lane", type: .Daily, completed: false, lastCompleted: nil)
+]
+
+var weeklyTasks = [
+    Task(name: "Check inside all unoccupied cabins", type: .Weekly, completed: false, lastCompleted: nil),
+    Task(name: "Run all faucets for 30 seconds", type: .Weekly, completed: false, lastCompleted: nil),
+    Task(name: "Walk the perimeter of the property", type: .Weekly, completed: false, lastCompleted: nil),
+]
+
+
+var biweeklyTask = [
     Task(name: "Run test alarm", type: .biWeekly, completed: false, lastCompleted: nil),
     Task(name: "Check motion detectors", type: .biWeekly, completed: false, lastCompleted: nil),
     Task(name: "Check Smoke Alarms", type: .biWeekly, completed: false, lastCompleted: nil),
-    ]
+]
 
-    var MonthlyTask = [
-        Task(name: "Month 1", type: .Monthly, completed: false, lastCompleted: nil),
-        Task(name: "Month 2 work", type: .Monthly, completed: false, lastCompleted: nil),
-        Task(name: "Month 3 task", type: .Monthly, completed: false, lastCompleted: nil),
-        ]
+var MonthlyTask = [
+    Task(name: "Month 1", type: .Monthly, completed: false, lastCompleted: nil),
+    Task(name: "Month 2 work", type: .Monthly, completed: false, lastCompleted: nil),
+    Task(name: "Month 3 task", type: .Monthly, completed: false, lastCompleted: nil),
+]
 
+
+
+
+
+class TodoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
    
     @IBOutlet weak var taskTableView: UITableView!
   
@@ -61,17 +66,17 @@ class TodoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let yesAction = UIAlertAction(title: "Yes", style: .destructive, handler: {
             action in
-            for i in 0..<self.dailyTasks.count{
-                self.dailyTasks[i].completed = false
+            for i in 0..<dailyTasks.count{
+                dailyTasks[i].completed = false
             }
-            for i in 0..<self.weeklyTasks.count{
-                self.weeklyTasks[i].completed = false
+            for i in 0..<weeklyTasks.count{
+                weeklyTasks[i].completed = false
             }
-            for i in 0..<self.biweeklyTask.count{
-                self.biweeklyTask[i].completed = false
+            for i in 0..<biweeklyTask.count{
+                biweeklyTask[i].completed = false
             }
-            for i in 0..<self.MonthlyTask.count{
-                self.MonthlyTask[i].completed = false
+            for i in 0..<MonthlyTask.count{
+                MonthlyTask[i].completed = false
             }
             self.taskTableView.reloadData()
             
@@ -101,19 +106,19 @@ class TodoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //swipping on row
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let myAction = UITableViewRowAction(style: .default, title: "Complete", handler:{
+        let myAction = UITableViewRowAction(style: .normal, title: "Complete", handler:{
             //closure or lambda 
             action, indexPath in
             
             switch indexPath.section{
             case 0:
-                self.dailyTasks[indexPath.row].completed = true
+                dailyTasks[indexPath.row].completed = true
             case 1:
-                self.weeklyTasks[indexPath.row].completed = true
+                weeklyTasks[indexPath.row].completed = true
             case 2:
-                self.biweeklyTask[indexPath.row].completed = true
+                biweeklyTask[indexPath.row].completed = true
             case 3:
-                self.MonthlyTask[indexPath.row].completed = true
+                MonthlyTask[indexPath.row].completed = true
             default:
                 break
             }
@@ -124,8 +129,54 @@ class TodoViewController: UIViewController, UITableViewDataSource, UITableViewDe
             //tell tableView it's done editing, this will make the button go away
             tableView.isEditing = false
         } )
-        let actions = [myAction]
+        
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: deleteTask)
+        
+        
+        let actions = [myAction, deleteAction ]
         return actions
+    }
+    
+    func deleteTask(action : UITableViewRowAction, indexPath : IndexPath){
+        
+        let confirm = UIAlertController(title: "Are you sure?", message: "Really Delete this task?", preferredStyle: .alert)
+        
+        let noAction = UIAlertAction(title: "No", style: .default, handler: {
+            action in
+            self.taskTableView.isEditing = false
+        })
+        
+        let yesAction = UIAlertAction(title: "Yes", style: .destructive, handler : {
+            action in
+            
+            switch indexPath.section{
+            case 0:
+                dailyTasks.remove(at: indexPath.row)
+            case 1:
+                weeklyTasks.remove(at: indexPath.row)
+            case 2:
+                biweeklyTask.remove(at: indexPath.row)
+            case 3:
+                MonthlyTask.remove(at: indexPath.row)
+            default:
+                break
+            }
+            
+            //refresh table
+            self.taskTableView.reloadData()
+            
+            //tell tableView it's done ed
+            self.taskTableView.isEditing = false
+            
+        })
+        
+        confirm.addAction(yesAction)
+        confirm.addAction(noAction)
+        
+        
+        present(confirm, animated: true, completion: nil)
+        
+        
     }
     
     
@@ -204,31 +255,7 @@ class TodoViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return ""
         }
     }
-    
-//    @IBAction func changeBackgroundColor(_ sender: Any) {
-//        
-//        //view is the toplevel shit here
-//        view.backgroundColor = UIColor.darkGray
-//        
-//        // each view has smalled views
-//        // all of type UIview
-//        // example button or label
-//        
-//        // to get all the subviews
-//        let scroolView = view.subviews[0]
-//        let subViews = scroolView.subviews
-//        // casting down to their appropriate specific types
-//        for sv in subViews{
-//            
-//            if sv is UILabel{
-//                let label = sv as! UILabel
-//                label.textColor = UIColor.lightGray
-//            }
-//        }
-//        
-//        modeLabel.text = "Dark Mode"
-//        
-//    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -239,6 +266,10 @@ class TodoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        taskTableView.reloadData()
     }
 
 
