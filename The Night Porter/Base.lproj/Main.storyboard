@@ -28,7 +28,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Night Porter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ce3-sU-Zea">
                                         <rect key="frame" x="1.5" y="0.0" width="180.5" height="27.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.9471920075213508" green="0.95716244970578601" blue="0.95716244970578601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vIz-HI-2tF">
@@ -63,16 +63,31 @@
                                     <constraint firstAttribute="width" constant="183" id="bR8-iM-7Td"/>
                                 </constraints>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame1" translatesAutoresizingMaskIntoConstraints="NO" id="P7c-GX-Cf3">
+                                <rect key="frame" x="104" y="101" width="166" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="4zA-DU-Le2"/>
+                                    <constraint firstAttribute="height" constant="128" id="QPZ-NA-4KQ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.26181912422180176" green="0.28969943523406982" blue="0.32301008701324463" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cko-fH-hUJ" firstAttribute="centerY" secondItem="IlB-e2-rc0" secondAttribute="centerY" id="9Fp-Gi-xqD"/>
+                            <constraint firstItem="P7c-GX-Cf3" firstAttribute="leading" secondItem="IlB-e2-rc0" secondAttribute="leadingMargin" constant="88" id="C6h-ye-3gy"/>
                             <constraint firstItem="cko-fH-hUJ" firstAttribute="leading" secondItem="IlB-e2-rc0" secondAttribute="leadingMargin" constant="80" id="EbF-Mb-BKN"/>
                             <constraint firstItem="cko-fH-hUJ" firstAttribute="centerX" secondItem="IlB-e2-rc0" secondAttribute="centerX" id="I1G-sW-sJa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P7c-GX-Cf3" secondAttribute="trailing" constant="89" id="KzF-RH-2Es"/>
+                            <constraint firstItem="P7c-GX-Cf3" firstAttribute="top" secondItem="8bb-9I-q9B" secondAttribute="bottom" constant="37" id="YEW-Uz-aaC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cko-fH-hUJ" secondAttribute="trailing" constant="80" id="awC-8L-6HQ"/>
+                            <constraint firstItem="cko-fH-hUJ" firstAttribute="top" secondItem="P7c-GX-Cf3" secondAttribute="bottom" constant="39.5" id="dgK-Qb-PoT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YYM-8M-h1B"/>
+                    <connections>
+                        <outlet property="appName" destination="Ce3-sU-Zea" id="SGK-k6-dxa"/>
+                        <outlet property="imageView" destination="P7c-GX-Cf3" id="8xu-su-Eja"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9e-9a-uat" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -248,6 +263,7 @@
                                                             <constraint firstAttribute="width" constant="285" id="8Z5-KB-WxF"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes"/>
                                                     </textField>
                                                 </subviews>
@@ -371,6 +387,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="frame1" width="800" height="500"/>
         <image name="weatherbg" width="16" height="16"/>
     </resources>
 </document>
