@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cko-fH-hUJ">
-                                <rect key="frame" x="96" y="278.5" width="183" height="110"/>
+                                <rect key="frame" x="96" y="268.5" width="183" height="130"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Night Porter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ce3-sU-Zea">
                                         <rect key="frame" x="1.5" y="0.0" width="180.5" height="27.5"/>
@@ -32,27 +32,34 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vIz-HI-2tF">
-                                        <rect key="frame" x="55" y="47.5" width="73" height="62.5"/>
+                                        <rect key="frame" x="55" y="47.5" width="73" height="82.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3o-IR-t2V">
-                                                <rect key="frame" x="5" y="0.0" width="63" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3o-IR-t2V">
+                                                <rect key="frame" x="5" y="0.0" width="63" height="22.5"/>
                                                 <state key="normal" title="Todo List"/>
                                                 <connections>
                                                     <segue destination="BYZ-38-t0r" kind="show" id="OjU-tu-Dwv"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOg-fQ-IE0">
-                                                <rect key="frame" x="0.0" y="32.5" width="73" height="30"/>
+                                                <rect key="frame" x="0.0" y="22.5" width="73" height="30"/>
                                                 <state key="normal" title="Stopwatch"/>
                                                 <connections>
                                                     <segue destination="9fW-Dg-FAR" kind="show" id="00t-9y-GpC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dm-oc-T3j">
+                                                <rect key="frame" x="7.5" y="52.5" width="58" height="30"/>
+                                                <state key="normal" title="Weather"/>
+                                                <connections>
+                                                    <segue destination="FXO-4F-gtW" kind="show" id="rqe-Vp-ddp"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="Vbz-X5-F3a"/>
+                                    <constraint firstAttribute="height" constant="130" id="Vbz-X5-F3a"/>
                                     <constraint firstAttribute="width" constant="183" id="bR8-iM-7Td"/>
                                 </constraints>
                             </stackView>
@@ -130,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eG3-Jp-aEq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82.400000000000006" y="627.4362818590705"/>
+            <point key="canvasLocation" x="1009" y="595"/>
         </scene>
         <!--Todo View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -205,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="773.60000000000002" y="205.54722638680661"/>
+            <point key="canvasLocation" x="833" y="-130"/>
         </scene>
         <!--New Task View Controller-->
         <scene sceneID="YCK-Dq-fz6">
@@ -297,7 +304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaX-t1-dJT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1608.8" y="194.75262368815595"/>
+            <point key="canvasLocation" x="1722" y="-131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z5m-iA-lNG">
@@ -315,7 +322,55 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRE-r4-nFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-922.39999999999998" y="-141.67916041979012"/>
+            <point key="canvasLocation" x="-932" y="-242"/>
+        </scene>
+        <!--Weather View Controller-->
+        <scene sceneID="duW-22-t6V">
+            <objects>
+                <viewController id="FXO-4F-gtW" customClass="WeatherViewController" customModule="The_Night_Porter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rSh-vI-B4r"/>
+                        <viewControllerLayoutGuide type="bottom" id="Scc-iS-BeX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9YT-Kf-n0y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weatherbg" translatesAutoresizingMaskIntoConstraints="NO" id="Tcg-mL-zsm">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetching weather..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afi-l2-Yhc">
+                                <rect key="frame" x="61" y="261" width="252" height="144"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="252" id="APu-NY-ZgN"/>
+                                    <constraint firstAttribute="height" constant="144" id="r5X-t1-RWA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Scc-iS-BeX" firstAttribute="top" secondItem="Tcg-mL-zsm" secondAttribute="bottom" id="14d-E6-xpj"/>
+                            <constraint firstItem="Tcg-mL-zsm" firstAttribute="leading" secondItem="9YT-Kf-n0y" secondAttribute="leading" id="3Cz-lS-2Ag"/>
+                            <constraint firstItem="Afi-l2-Yhc" firstAttribute="centerX" secondItem="9YT-Kf-n0y" secondAttribute="centerX" id="DxZ-zT-kSg"/>
+                            <constraint firstItem="Tcg-mL-zsm" firstAttribute="top" secondItem="rSh-vI-B4r" secondAttribute="bottom" id="VKq-Fa-Weq"/>
+                            <constraint firstAttribute="trailing" secondItem="Tcg-mL-zsm" secondAttribute="trailing" id="aqQ-8G-Jnq"/>
+                            <constraint firstItem="Afi-l2-Yhc" firstAttribute="centerY" secondItem="9YT-Kf-n0y" secondAttribute="centerY" id="xra-r7-bGd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="weatherLabel" destination="Afi-l2-Yhc" id="hTh-dE-ihP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fE2-4l-ko4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23.199999999999999" y="700.29985007496259"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="weatherbg" width="16" height="16"/>
+    </resources>
 </document>
